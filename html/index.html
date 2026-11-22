@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lingua-Doll — Asistente de Idiomas Portátil</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+  <script src="../js/app.js" defer></script>
+</head>
+<body>
+  <div class="hero-wrapper">
+    <header class="navbar">
+      <div class="nav-brand">
+        <img src="../images/LinguaDollAvatar.jpg" alt="Avatar Lingua-Doll" class="brand-avatar">
+        <div class="brand-text">
+          <span class="brand-name">LINGUA-DOLL</span>
+          <span class="brand-tag">ASISTENTE PORTÁTIL</span>
+        </div>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#inicio" class="nav-link active">Inicio</a>
+        <a href="#caracteristicas" class="nav-link">Características</a>
+        <a href="#acentos" class="nav-link">Acentos</a>
+        <a href="#aprendizaje" class="nav-link">Aprendizaje</a>
+      </nav>
+    </header>
+
+    <section class="hero" id="inicio">
+      <div class="hero-content">
+        <span class="eyebrow">ASISTENTE DE IDIOMAS PORTÁTIL • 18 CM</span>
+        <h1 class="hero-title">Más que una muñeca, tu tutora.</h1>
+        <p class="hero-description">
+          Una compañera inteligente de tamaño portable diseñada para ayudarte a practicar inglés todos los días con acento americano y británico.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#caracteristicas" class="btn-primary-dark">Ver características &rarr;</a>
+          <a href="#avatar" class="btn-secondary-link">
+            <span class="circle-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+              </svg>
+            </span>
+            <span>Conocer avatar</span>
+          </a>
+        </div>
+
+        <div class="metrics-strip">
+          <div class="metric-item">
+            <span class="metric-val">18 cm</span>
+            <span class="metric-lbl">Tamaño Portable</span>
+          </div>
+          <div class="metric-divider"></div>
+          <div class="metric-item">
+            <span class="metric-val">US / UK</span>
+            <span class="metric-lbl">Cambio de Acento</span>
+          </div>
+          <div class="metric-divider"></div>
+          <div class="metric-item">
+            <span class="metric-val">10 / día</span>
+            <span class="metric-lbl">Palabras Nuevas</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-image-container">
+          <img src="../images/LinguaDoll.jpg" alt="Muñeca inteligente Lingua-Doll" class="hero-image">
+          <div class="hero-glow-overlay"></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section class="features-section" id="caracteristicas">
+    <div class="features-header">
+      <div class="header-left">
+        <span class="eyebrow">CARACTERÍSTICAS PRINCIPALES</span>
+        <h2 class="section-title">Diseñada para tu aprendizaje.</h2>
+      </div>
+    </div>
+
+    <div class="cards-grid">
+      <article class="feature-card">
+        <div class="card-top">
+          <span class="card-badge">Doble Acento</span>
+          <span class="card-category">PRONUNCIACIÓN</span>
+        </div>
+        <div class="card-bottom">
+          <h3 class="card-title">Acento US &amp; UK</h3>
+          <p class="card-subtitle">Alterna entre inglés americano y británico.</p>
+        </div>
+      </article>
+
+      <article class="feature-card">
+        <div class="card-top">
+          <span class="card-badge">Práctica Diaria</span>
+          <span class="card-category">VOCABULARIO</span>
+        </div>
+        <div class="card-bottom">
+          <h3 class="card-title">10 Palabras Diarias</h3>
+          <p class="card-subtitle">Una lista nueva cada día para avanzar.</p>
+        </div>
+      </article>
+
+      <article class="feature-card">
+        <div class="card-top">
+          <span class="card-badge">Diálogo Fluido</span>
+          <span class="card-category">CONVERSACIÓN</span>
+        </div>
+        <div class="card-bottom">
+          <h3 class="card-title">Charla Personalizada</h3>
+          <p class="card-subtitle">Conversaciones diarias adaptadas a ti.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="practice-section" id="aprendizaje">
+    <div class="practice-header">
+      <span class="eyebrow">PRÁCTICA INTERACTIVA</span>
+      <h2 class="section-title">Conversa con Lingua-Doll.</h2>
+      <p class="section-lead">Elige un tema para iniciar una charla guiada en inglés.</p>
+    </div>
+
+    <div class="topics-grid">
+      <button type="button" class="topic-card" data-topic="food">
+        <span class="topic-title">FOOD</span>
+        <div class="topic-img-wrapper">
+          <img src="../images/IconoBotonFood.png" alt="Food icon" class="topic-icon">
+        </div>
+      </button>
+
+      <button type="button" class="topic-card" data-topic="trips">
+        <span class="topic-title">TRIPS</span>
+        <div class="topic-img-wrapper">
+          <img src="../images/IconoBotonTrips.png" alt="Trips icon" class="topic-icon">
+        </div>
+      </button>
+
+      <button type="button" class="topic-card active" data-topic="pets">
+        <span class="topic-title">PETS</span>
+        <div class="topic-img-wrapper">
+          <img src="../images/IconoBotonPets.png" alt="Pets icon" class="topic-icon">
+        </div>
+      </button>
+
+      <button type="button" class="topic-card" data-topic="pharmacy">
+        <span class="topic-title">PHARMACY</span>
+        <div class="topic-img-wrapper">
+          <img src="../images/IconoBotonPharmacy.png" alt="Pharmacy icon" class="topic-icon">
+        </div>
+      </button>
+    </div>
+
+    <div class="chat-container">
+      <div class="chat-header">
+        <div class="chat-header-brand">
+          <img src="../images/LinguaDollAvatar.jpg" alt="Avatar Lingua-Doll" class="chat-header-avatar">
+          <div class="chat-header-info">
+            <span class="chat-header-name">Lingua-Doll</span>
+            <span class="chat-header-topic" id="chat-topic-badge">Pets</span>
+          </div>
+        </div>
+        <button type="button" class="btn-chat-restart" id="chat-restart-btn">Reiniciar tema</button>
+      </div>
+
+      <div class="chat-messages" id="chat-messages"></div>
+      <div class="chat-options-area" id="chat-options"></div>
+    </div>
+  </section>
+</body>
+</html>
