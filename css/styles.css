@@ -19,6 +19,10 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
@@ -37,7 +41,6 @@ a {
   text-decoration: none;
 }
 
-/* Tipografía de etiquetas */
 .eyebrow {
   font-size: 0.75rem;
   font-weight: 600;
@@ -48,7 +51,7 @@ a {
   margin-bottom: 0.75rem;
 }
 
-/* Contenedor del Hero y Navegación */
+/* Hero & Navigation Wrapper */
 .hero-wrapper {
   background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
   position: relative;
@@ -116,7 +119,7 @@ a {
   color: var(--text-primary);
 }
 
-/* Sección Hero */
+/* Hero Section */
 .hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -168,31 +171,6 @@ a {
 .btn-primary-dark:hover {
   transform: translateY(-1px);
   box-shadow: 0 6px 18px rgba(38, 25, 18, 0.22);
-}
-
-.btn-secondary-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.65rem;
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  transition: opacity 0.2s ease;
-}
-
-.btn-secondary-link:hover {
-  opacity: 0.75;
-}
-
-.circle-icon {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: var(--btn-pill-bg);
-  border: 1px solid var(--border-subtle);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .metrics-strip {
@@ -260,7 +238,7 @@ a {
   pointer-events: none;
 }
 
-/* Sección de Características */
+/* Features Section */
 .features-section {
   background-color: var(--bg-primary);
   padding: 6rem 4rem;
@@ -284,7 +262,6 @@ a {
   color: var(--text-primary);
 }
 
-/* Cuadrícula de Tarjetas */
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -303,12 +280,21 @@ a {
   justify-content: space-between;
   overflow: hidden;
   box-shadow: 0 10px 24px rgba(38, 25, 18, 0.1);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  border: 1px solid transparent;
 }
 
 .feature-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 14px 30px rgba(38, 25, 18, 0.18);
+}
+
+.feature-card-interactive {
+  cursor: pointer;
+}
+
+.feature-card-interactive:hover {
+  border-color: rgba(249, 245, 240, 0.35);
 }
 
 .card-top {
@@ -354,11 +340,411 @@ a {
   line-height: 1.45;
 }
 
-/* Sección de Práctica Interactiva */
+.card-action-hint {
+  display: inline-block;
+  margin-top: 0.85rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #EDE3D7;
+  letter-spacing: 0.04em;
+  opacity: 0.9;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.feature-card-interactive:hover .card-action-hint {
+  transform: translateX(4px);
+  opacity: 1;
+}
+
+/* Siluetas en tarjetas */
+.card-silhouette-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 0;
+  pointer-events: none;
+}
+
+.card-silhouette-img {
+  display: block;
+  margin: auto;
+  max-height: 155px;
+  width: auto;
+  object-fit: contain;
+  pointer-events: none;
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover .card-silhouette-img,
+.feature-card-interactive:hover .card-silhouette-img {
+  transform: scale(1.04);
+}
+
+/* Accent Selection Section */
+.accent-section {
+  display: none;
+  background-color: var(--bg-primary);
+  padding: 3.5rem 4rem 5.5rem 4rem;
+  max-width: 1440px;
+  margin: 0 auto;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.accent-section.active {
+  display: block;
+}
+
+.accent-card-container {
+  max-width: 760px;
+  margin: 0 auto;
+  background-color: #DECBB7;
+  border-radius: 24px;
+  padding: 3rem 2.5rem;
+  box-shadow: 0 16px 36px rgba(38, 25, 18, 0.08);
+  text-align: center;
+}
+
+.accent-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+  font-weight: 600;
+  color: #231710;
+  margin-bottom: 0.6rem;
+  line-height: 1.2;
+}
+
+.accent-lead {
+  font-size: 0.98rem;
+  color: #6E5A4F;
+  margin-bottom: 2.25rem;
+  max-width: 540px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.accent-options-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.accent-option-card {
+  position: relative;
+  background-color: #FAF6F0;
+  border: 2px solid transparent;
+  border-radius: 18px;
+  padding: 1.75rem 1.25rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(35, 23, 16, 0.05);
+}
+
+.accent-option-card:hover {
+  transform: translateY(-3px);
+  border-color: #A87C5B;
+  box-shadow: 0 8px 22px rgba(35, 23, 16, 0.1);
+}
+
+.accent-option-card.active {
+  border-color: #261912;
+  background-color: #FFFFFF;
+  box-shadow: 0 8px 24px rgba(38, 25, 18, 0.14);
+}
+
+.accent-card-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.6rem;
+  border-radius: 9999px;
+  background-color: #EDE3D7;
+  color: #6E5A4F;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.accent-option-card.active .accent-card-badge {
+  opacity: 1;
+  background-color: #261912;
+  color: #F9F5F0;
+}
+
+.accent-flag {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #7A5238;
+  background-color: #EDE3D7;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid #D2BFA9;
+}
+
+.accent-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #231710;
+  margin-bottom: 0.25rem;
+}
+
+.accent-voice {
+  font-size: 0.8rem;
+  color: #6E5A4F;
+  font-weight: 500;
+}
+
+.accent-sample-box {
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 1px dashed #C8B097;
+  border-radius: 16px;
+  padding: 1.25rem 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+}
+
+.sample-text {
+  font-style: italic;
+  font-size: 0.92rem;
+  color: #231710;
+  text-align: left;
+}
+
+.btn-sample-listen {
+  background-color: #261912;
+  color: #F9F5F0;
+  border: none;
+  border-radius: 9999px;
+  padding: 0.65rem 1.25rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.btn-sample-listen:hover {
+  background-color: #3b281d;
+  transform: translateY(-1px);
+}
+
+.btn-sample-listen.is-playing {
+  background-color: #7A5238;
+  animation: pulseListen 1.2s infinite;
+}
+
+/* Daily Vocabulary Section */
+.vocabulary-section {
+  display: none;
+  background-color: var(--bg-primary);
+  padding: 3rem 4rem 5.5rem 4rem;
+  max-width: 1440px;
+  margin: 0 auto;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.vocabulary-section.active {
+  display: block;
+}
+
+.vocab-card-container {
+  max-width: 680px;
+  margin: 0 auto;
+  background-color: #C8B29B;
+  border-radius: 24px;
+  padding: 3rem 2.75rem;
+  box-shadow: 0 16px 36px rgba(38, 25, 18, 0.08);
+}
+
+.vocab-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+  font-weight: 600;
+  color: #231710;
+  text-align: center;
+  margin-bottom: 2rem;
+  line-height: 1.25;
+}
+
+.vocab-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-bottom: 2rem;
+}
+
+.vocab-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.vocab-pill-wrapper {
+  position: relative;
+  width: 100%;
+  background-color: #FAF6F0;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.65rem 0.85rem 0.65rem 3.25rem;
+  box-shadow: 0 2px 8px rgba(35, 23, 16, 0.04);
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.vocab-pill-wrapper:hover {
+  background-color: #FFFFFF;
+  border-color: #D2BFA9;
+  box-shadow: 0 4px 12px rgba(35, 23, 16, 0.08);
+}
+
+.vocab-item.is-expanded .vocab-pill-wrapper {
+  background-color: #FFFFFF;
+  border-color: #A87C5B;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.vocab-check-circle {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: #FAF6F0;
+  border: 1.5px solid #231710;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #231710;
+  z-index: 2;
+  box-shadow: 0 2px 6px rgba(35, 23, 16, 0.1);
+  pointer-events: none;
+}
+
+.vocab-word-text {
+  font-weight: 600;
+  font-size: 0.98rem;
+  color: #231710;
+  flex: 1;
+  text-align: center;
+  user-select: none;
+}
+
+.btn-vocab-listen {
+  background-color: #EDE3D7;
+  border: 1px solid #D2BFA9;
+  color: #7A5238;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.btn-vocab-listen:hover {
+  background-color: #261912;
+  border-color: #261912;
+  color: #FAF6F0;
+  transform: scale(1.08);
+}
+
+.btn-vocab-listen.is-playing {
+  background-color: #261912;
+  border-color: #FAF6F0;
+  color: #FAF6F0;
+  animation: pulseListen 1.2s infinite;
+}
+
+.vocab-definition-panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+  background-color: rgba(250, 246, 240, 0.9);
+  border-radius: 0 0 16px 16px;
+  margin: 0 0.5rem;
+  border: 1px solid transparent;
+  border-top: none;
+}
+
+.vocab-item.is-expanded .vocab-definition-panel {
+  max-height: 120px;
+  padding: 0.85rem 1.5rem 0.85rem 2.85rem;
+  opacity: 1;
+  border-color: #D2BFA9;
+}
+
+.vocab-definition-text {
+  font-size: 0.88rem;
+  color: #6E5A4F;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.vocab-action-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-refresh-vocab {
+  background-color: #261912;
+  color: #F9F5F0;
+  border: none;
+  border-radius: 9999px;
+  padding: 0.75rem 1.75rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  box-shadow: 0 4px 12px rgba(38, 25, 18, 0.15);
+}
+
+.btn-refresh-vocab:hover {
+  background-color: #3b281d;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(38, 25, 18, 0.22);
+}
+
+/* Interactive Practice & Chat Section */
 .practice-section {
+  display: none;
   background-color: var(--bg-secondary);
   padding: 5.5rem 4rem;
   border-top: 1px solid var(--border-subtle);
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.practice-section.active {
+  display: block;
 }
 
 .practice-header {
@@ -373,7 +759,7 @@ a {
   margin-top: 0.5rem;
 }
 
-/* Selector de Temas (4 Cuadros) */
+/* Topics Grid */
 .topics-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -432,7 +818,7 @@ a {
   object-fit: contain;
 }
 
-/* Contenedor del Chat */
+/* Chat Container */
 .chat-container {
   max-width: 920px;
   margin: 0 auto;
@@ -474,10 +860,46 @@ a {
   flex-direction: column;
 }
 
+.chat-header-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
 .chat-header-name {
   font-weight: 600;
   font-size: 0.92rem;
   color: var(--text-primary);
+}
+
+.chat-accent-switch {
+  display: inline-flex;
+  background-color: #FAF6F0;
+  border: 1px solid #D2BFA9;
+  border-radius: 9999px;
+  padding: 2px;
+}
+
+.accent-pill-btn {
+  background: transparent;
+  border: none;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  color: #7A5238;
+  transition: all 0.2s ease;
+}
+
+.accent-pill-btn:hover {
+  color: #261912;
+}
+
+.accent-pill-btn.active {
+  background-color: #261912;
+  color: #F9F5F0;
+  box-shadow: 0 2px 6px rgba(38, 25, 18, 0.15);
 }
 
 .chat-header-topic {
@@ -549,6 +971,48 @@ a {
   background-color: #8B5E3C;
   color: #FAF6F0;
   border-bottom-left-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.doll-bubble-text {
+  display: block;
+}
+
+.btn-bubble-listen {
+  align-self: flex-start;
+  background-color: rgba(250, 246, 240, 0.18);
+  border: 1px solid rgba(250, 246, 240, 0.35);
+  color: #FAF6F0;
+  border-radius: 9999px;
+  padding: 0.25rem 0.7rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(4px);
+}
+
+.btn-bubble-listen:hover {
+  background-color: rgba(250, 246, 240, 0.3);
+  border-color: rgba(250, 246, 240, 0.6);
+}
+
+.btn-bubble-listen.is-playing {
+  background-color: #261912;
+  border-color: #FAF6F0;
+  color: #FAF6F0;
+  animation: pulseListen 1.2s infinite;
+}
+
+@keyframes pulseListen {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
 }
 
 .user-row {
@@ -562,7 +1026,6 @@ a {
   font-weight: 500;
 }
 
-/* Área de Opciones */
 .chat-options-area {
   padding: 0.5rem 1.75rem 2rem 4.25rem;
 }
@@ -607,7 +1070,6 @@ a {
   background-color: rgba(250, 246, 240, 0.1);
 }
 
-/* Cuadro de Finalización */
 .completion-box {
   background: rgba(255, 255, 255, 0.5);
   border: 1px dashed #C8B097;
@@ -650,11 +1112,11 @@ a {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(4px); }
+  from { opacity: 0; transform: translateY(6px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Responsividad */
+/* Responsiveness */
 @media (max-width: 1024px) {
   .navbar {
     padding: 1.25rem 2rem;
@@ -664,6 +1126,7 @@ a {
     gap: 2rem;
   }
   .features-section,
+  .vocabulary-section,
   .practice-section {
     padding: 4rem 2rem;
   }
@@ -676,35 +1139,150 @@ a {
 }
 
 @media (max-width: 768px) {
+  .navbar {
+    padding: 1rem 1.25rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
   .nav-links {
-    display: none;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+  }
+  .nav-link {
+    font-size: 0.85rem;
   }
   .hero {
     grid-template-columns: 1fr;
     text-align: left;
+    padding: 1.5rem 1.25rem 3rem 1.25rem;
+    gap: 2rem;
   }
   .hero-visual {
     order: -1;
   }
   .hero-image {
-    height: 380px;
+    height: 320px;
+  }
+  .features-section,
+  .accent-section,
+  .vocabulary-section,
+  .practice-section {
+    padding: 3rem 1.25rem;
   }
   .features-header {
+    margin-bottom: 2rem;
+  }
+  .accent-card-container {
+    padding: 2rem 1.25rem;
+    border-radius: 18px;
+  }
+  .accent-options-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .accent-sample-box {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 1.5rem;
+    text-align: center;
+    gap: 1rem;
+    padding: 1.25rem 1rem;
+  }
+  .sample-text {
+    text-align: center;
   }
   .cards-grid {
     grid-template-columns: 1fr;
+    gap: 1.25rem;
   }
+  .feature-card {
+    aspect-ratio: auto;
+    min-height: 220px;
+    padding: 1.5rem 1.25rem;
+  }
+  .card-silhouette-img {
+    max-height: 115px;
+  }
+  .vocab-card-container {
+    padding: 2rem 1.25rem;
+    border-radius: 18px;
+  }
+  .vocab-pill-wrapper {
+    padding: 0.6rem 0.65rem 0.6rem 2.85rem;
+  }
+  .vocab-word-text {
+    font-size: 0.92rem;
+  }
+  .vocab-check-circle {
+    width: 30px;
+    height: 30px;
+    font-size: 0.78rem;
+  }
+  .btn-vocab-listen {
+    width: 28px;
+    height: 28px;
+  }
+  .vocab-item.is-expanded .vocab-definition-panel {
+    padding: 0.75rem 1rem 0.75rem 2rem;
+  }
+  .vocab-definition-text {
+    font-size: 0.82rem;
+  }
+  .metrics-strip {
+    flex-wrap: wrap;
+    gap: 1.25rem;
+  }
+
+  /* Compact Vertical Mobile Topics */
   .topics-grid {
     grid-template-columns: 1fr;
+    gap: 0.65rem;
+    margin-bottom: 2rem;
+  }
+  .topic-card {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0.6rem 1rem;
+    aspect-ratio: auto;
+    gap: 1rem;
+    border-radius: 12px;
+  }
+  .topic-img-wrapper {
+    flex: 0 0 36px;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+  }
+  .topic-icon {
+    width: 36px;
+    height: 36px;
+    max-width: 36px;
+    max-height: 36px;
+    object-fit: contain;
+  }
+  .topic-title {
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+  }
+
+  /* Compact Mobile Chat Area */
+  .chat-container {
+    border-radius: 16px;
+  }
+  .chat-messages {
+    padding: 1.25rem 1rem 0.75rem 1rem;
+    gap: 1rem;
+  }
+  .chat-bubble {
+    max-width: 92%;
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
   }
   .chat-options-area {
     padding: 0.5rem 1rem 1.5rem 1rem;
   }
-  .metrics-strip {
-    flex-wrap: wrap;
-    gap: 1.5rem;
+  .option-pill-btn {
+    max-width: 92%;
+    padding: 0.65rem 1rem;
+    font-size: 0.88rem;
   }
 }

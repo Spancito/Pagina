@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lingua-Doll — Asistente de Idiomas Portátil</title>
+  <title>Lingua-Doll — Portable Language Assistant</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -14,117 +14,168 @@
   <div class="hero-wrapper">
     <header class="navbar">
       <div class="nav-brand">
-        <img src="../images/LinguaDollAvatar.jpg" alt="Avatar Lingua-Doll" class="brand-avatar">
+        <img src="../images/LinguaDollAvatar.jpg" alt="Lingua-Doll Avatar" class="brand-avatar">
         <div class="brand-text">
           <span class="brand-name">LINGUA-DOLL</span>
-          <span class="brand-tag">ASISTENTE PORTÁTIL</span>
+          <span class="brand-tag">PORTABLE ASSISTANT</span>
         </div>
-      </div>
-
-      <nav class="nav-links">
-        <a href="#inicio" class="nav-link active">Inicio</a>
-        <a href="#caracteristicas" class="nav-link">Características</a>
-        <a href="#acentos" class="nav-link">Acentos</a>
-        <a href="#aprendizaje" class="nav-link">Aprendizaje</a>
+      </div>      <nav class="nav-links">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#accent-section" class="nav-link" id="nav-accents-link">Accents</a>
       </nav>
     </header>
 
-    <section class="hero" id="inicio">
+    <section class="hero" id="home">
       <div class="hero-content">
-        <span class="eyebrow">ASISTENTE DE IDIOMAS PORTÁTIL • 18 CM</span>
-        <h1 class="hero-title">Más que una muñeca, tu tutora.</h1>
+        <span class="eyebrow">PORTABLE LANGUAGE ASSISTANT • 18 CM</span>
+        <h1 class="hero-title">More than a doll, your tutor.</h1>
         <p class="hero-description">
-          Una compañera inteligente de tamaño portable diseñada para ayudarte a practicar inglés todos los días con acento americano y británico.
+          A smart, portable companion designed to help you practice English every day with both American and British accents.
         </p>
 
         <div class="hero-actions">
-          <a href="#caracteristicas" class="btn-primary-dark">Ver características &rarr;</a>
-          <a href="#avatar" class="btn-secondary-link">
-            <span class="circle-icon">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="5 3 19 12 5 21 5 3"></polygon>
-              </svg>
-            </span>
-            <span>Conocer avatar</span>
-          </a>
+          <a href="#features" class="btn-primary-dark">Explore features &rarr;</a>
         </div>
 
         <div class="metrics-strip">
           <div class="metric-item">
             <span class="metric-val">18 cm</span>
-            <span class="metric-lbl">Tamaño Portable</span>
+            <span class="metric-lbl">Portable Size</span>
           </div>
           <div class="metric-divider"></div>
           <div class="metric-item">
             <span class="metric-val">US / UK</span>
-            <span class="metric-lbl">Cambio de Acento</span>
+            <span class="metric-lbl">Accent Switch</span>
           </div>
           <div class="metric-divider"></div>
           <div class="metric-item">
-            <span class="metric-val">10 / día</span>
-            <span class="metric-lbl">Palabras Nuevas</span>
+            <span class="metric-val">10 / day</span>
+            <span class="metric-lbl">New Words</span>
           </div>
         </div>
       </div>
 
       <div class="hero-visual">
         <div class="hero-image-container">
-          <img src="../images/LinguaDoll.jpg" alt="Muñeca inteligente Lingua-Doll" class="hero-image">
+          <img src="../images/LinguaDoll.jpeg" alt="Lingua-Doll smart companion" class="hero-image">
           <div class="hero-glow-overlay"></div>
         </div>
       </div>
     </section>
   </div>
 
-  <section class="features-section" id="caracteristicas">
+  <section class="features-section" id="features">
     <div class="features-header">
       <div class="header-left">
-        <span class="eyebrow">CARACTERÍSTICAS PRINCIPALES</span>
-        <h2 class="section-title">Diseñada para tu aprendizaje.</h2>
+        <span class="eyebrow">MAIN FEATURES</span>
+        <h2 class="section-title">Designed for your learning.</h2>
       </div>
     </div>
 
     <div class="cards-grid">
-      <article class="feature-card">
+      <article class="feature-card feature-card-interactive" id="card-accents" role="button" tabindex="0">
         <div class="card-top">
-          <span class="card-badge">Doble Acento</span>
-          <span class="card-category">PRONUNCIACIÓN</span>
+          <span class="card-badge">Dual Accent</span>
+          <span class="card-category">PRONUNCIATION</span>
+        </div>
+        <div class="card-silhouette-wrap">
+          <img src="../images/SiluetaTarjetaAcentos.png" alt="Accent switch silhouette" class="card-silhouette-img">
         </div>
         <div class="card-bottom">
-          <h3 class="card-title">Acento US &amp; UK</h3>
-          <p class="card-subtitle">Alterna entre inglés americano y británico.</p>
+          <h3 class="card-title">US &amp; UK Accent</h3>
+          <p class="card-subtitle">Switch seamlessly between American and British English.</p>
+          <span class="card-action-hint">Choose accent &rarr;</span>
         </div>
       </article>
 
-      <article class="feature-card">
+      <article class="feature-card feature-card-interactive" id="card-vocabulary" role="button" tabindex="0">
         <div class="card-top">
-          <span class="card-badge">Práctica Diaria</span>
-          <span class="card-category">VOCABULARIO</span>
+          <span class="card-badge">Daily Practice</span>
+          <span class="card-category">VOCABULARY</span>
+        </div>
+        <div class="card-silhouette-wrap">
+          <img src="../images/SiluetaTarjetaLista.png" alt="Vocabulary list silhouette" class="card-silhouette-img">
         </div>
         <div class="card-bottom">
-          <h3 class="card-title">10 Palabras Diarias</h3>
-          <p class="card-subtitle">Una lista nueva cada día para avanzar.</p>
+          <h3 class="card-title">10 Daily Words</h3>
+          <p class="card-subtitle">A fresh list every day to boost your fluency.</p>
+          <span class="card-action-hint">View today's list &rarr;</span>
         </div>
       </article>
 
-      <article class="feature-card">
+      <article class="feature-card feature-card-interactive" id="card-conversation" role="button" tabindex="0">
         <div class="card-top">
-          <span class="card-badge">Diálogo Fluido</span>
-          <span class="card-category">CONVERSACIÓN</span>
+          <span class="card-badge">Fluid Dialogue</span>
+          <span class="card-category">CONVERSATION</span>
+        </div>
+        <div class="card-silhouette-wrap">
+          <img src="../images/SiluetaTarjetaChat.png" alt="Chat conversation silhouette" class="card-silhouette-img">
         </div>
         <div class="card-bottom">
-          <h3 class="card-title">Charla Personalizada</h3>
-          <p class="card-subtitle">Conversaciones diarias adaptadas a ti.</p>
+          <h3 class="card-title">Personalized Chat</h3>
+          <p class="card-subtitle">Daily guided conversations tailored to you.</p>
+          <span class="card-action-hint">Tap to start chatting &rarr;</span>
         </div>
       </article>
     </div>
   </section>
 
-  <section class="practice-section" id="aprendizaje">
+  <section class="accent-section" id="accent-section">
+    <div class="accent-card-container">
+      <span class="eyebrow">ACCENT SELECTION</span>
+      <h2 class="accent-title">Switch Lingua-Doll's Accent</h2>
+      <p class="accent-lead">Choose your preferred English accent to listen to all voice interactions.</p>
+
+      <div class="accent-options-grid">
+        <button type="button" class="accent-option-card active" data-accent="us" id="accent-card-us">
+          <div class="accent-card-badge">Default</div>
+          <span class="accent-flag">US</span>
+          <div class="accent-card-details">
+            <h3 class="accent-name">American English</h3>
+            <span class="accent-voice">Natural voice • Ana</span>
+          </div>
+        </button>
+
+        <button type="button" class="accent-option-card" data-accent="uk" id="accent-card-uk">
+          <div class="accent-card-badge">Selected</div>
+          <span class="accent-flag">UK</span>
+          <div class="accent-card-details">
+            <h3 class="accent-name">British English</h3>
+            <span class="accent-voice">Natural voice • Maisie</span>
+          </div>
+        </button>
+      </div>
+
+      <div class="accent-sample-box">
+        <p class="sample-text">"Hello! I am Lingua-Doll, your portable English tutor."</p>
+        <button type="button" class="btn-sample-listen" id="btn-sample-listen">
+          <svg class="speaker-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+          </svg>
+          <span>Listen sample</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="vocabulary-section" id="vocabulary-section">
+    <div class="vocab-card-container">
+      <h2 class="vocab-title">Your 10 vocabulary words of the day...</h2>
+      <ul class="vocab-list" id="vocab-words-list"></ul>
+      <div class="vocab-action-wrapper">
+        <button type="button" class="btn-refresh-vocab" id="refresh-vocab-btn">Refresh 10 words &#8635;</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="practice-section" id="chat-section">
     <div class="practice-header">
-      <span class="eyebrow">PRÁCTICA INTERACTIVA</span>
-      <h2 class="section-title">Conversa con Lingua-Doll.</h2>
-      <p class="section-lead">Elige un tema para iniciar una charla guiada en inglés.</p>
+      <span class="eyebrow">INTERACTIVE PRACTICE</span>
+      <h2 class="section-title">Chat with Lingua-Doll.</h2>
+      <p class="section-lead">Choose a topic to start a guided English conversation.</p>
     </div>
 
     <div class="topics-grid">
@@ -160,13 +211,19 @@
     <div class="chat-container">
       <div class="chat-header">
         <div class="chat-header-brand">
-          <img src="../images/LinguaDollAvatar.jpg" alt="Avatar Lingua-Doll" class="chat-header-avatar">
+          <img src="../images/LinguaDollAvatar.jpg" alt="Lingua-Doll Avatar" class="chat-header-avatar">
           <div class="chat-header-info">
-            <span class="chat-header-name">Lingua-Doll</span>
+            <div class="chat-header-title-row">
+              <span class="chat-header-name">Lingua-Doll</span>
+              <div class="chat-accent-switch" id="chat-accent-switch">
+                <button type="button" class="accent-pill-btn active" data-accent="us" id="chat-pill-us">US</button>
+                <button type="button" class="accent-pill-btn" data-accent="uk" id="chat-pill-uk">UK</button>
+              </div>
+            </div>
             <span class="chat-header-topic" id="chat-topic-badge">Pets</span>
           </div>
         </div>
-        <button type="button" class="btn-chat-restart" id="chat-restart-btn">Reiniciar tema</button>
+        <button type="button" class="btn-chat-restart" id="chat-restart-btn">Reset topic</button>
       </div>
 
       <div class="chat-messages" id="chat-messages"></div>
